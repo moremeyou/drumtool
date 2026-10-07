@@ -1,0 +1,7 @@
+{
+  "description": "Provisional TD-50X mapping. Verify numeric notes on your module; octave labels use MIDI 60 = C3.",
+  "channel": 10,
+  "note_name_octave_offset": -2,
+  "articulations": {"38": "head", "40": "rim", "37": "cross-stick"},
+  "correlation_window_ms": 30
+}
