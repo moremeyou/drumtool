@@ -9,6 +9,7 @@ from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from pydantic import BaseModel
 
 from app.api.broker import EventBroker
+from app.classifier.knn import KNNClassifier
 from app.midi.engine import MidiEngine
 from app.midi.interpreter import MidiInterpreter
 
@@ -33,8 +34,9 @@ logging.getLogger('app').propagate = False
 
 def create_app(backend=None):
     mapping = json.loads((ROOT / 'app/midi/mapping.json').read_text())
+    calibration = json.loads((ROOT / 'calibration/pd140ds_default.json').read_text())
     broker = EventBroker()
-    engine = MidiEngine(MidiInterpreter(mapping), broker, backend)
+    engine = MidiEngine(MidiInterpreter(mapping, KNNClassifier(calibration)), broker, backend)
 
     @asynccontextmanager
     async def lifespan(app):
@@ -48,6 +50,10 @@ def create_app(backend=None):
     @app.get('/api/status')
     async def status():
         return engine.status()
+
+    @app.get('/api/calibration')
+    async def get_calibration():
+        return calibration
 
     @app.get('/api/midi/devices')
     async def devices():

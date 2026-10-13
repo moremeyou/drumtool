@@ -1,5 +1,9 @@
 # Project rules
 
+## Browser and screen access
+
+- Ask the user before inspecting their screen or browser, including screenshots, DOM/accessibility reads and browser automation. Prefer pasted hit-history data, source inspection and code-level tests. Do not use browser inspection as an automatic verification step.
+
 ## Privacy is a release requirement
 
 - Treat every tracked file and every commit as potentially public, regardless of repository visibility.

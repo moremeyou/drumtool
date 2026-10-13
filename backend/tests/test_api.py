@@ -30,6 +30,8 @@ def test_raw_websocket_and_browser_independent_capture():
     with TestClient(app) as client:
         assert client.get('/api/status').json()['connected']
         assert client.get('/api/midi/devices').json()['devices'] == ['TD-50X']
+        calibration = client.get('/api/calibration').json()
+        assert calibration['k'] == 5 and len(calibration['samples']) == 40
         # The real production callback path captures with no browser connected.
         backend.callback(mido.Message('control_change', channel=9, control=16, value=85))
         backend.callback(mido.Message('control_change', channel=9, control=88, value=64))
@@ -44,6 +46,8 @@ def test_raw_websocket_and_browser_independent_capture():
             assert hits[0]['position_cc16'] == 85
             assert hits[0]['velocity_prefix_cc88'] == 64
             assert hits[0]['velocity'] == 67
+            assert hits[0]['estimated_ring'] in {'CENTER', 'INNER', 'MIDDLE', 'OUTER'}
+            assert 0 < hits[0]['confidence'] <= 1
         assert client.get('/api/status').json()['hits_received'] == 1
 
 

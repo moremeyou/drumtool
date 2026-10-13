@@ -1,4 +1,9 @@
 export type Ring = 'CENTER' | 'INNER' | 'MIDDLE' | 'OUTER' | 'UNKNOWN'
+export type ConfirmedRing = Exclude<Ring, 'UNKNOWN'>
+export interface ConfirmedBatch {
+  confirmed_ring: ConfirmedRing
+  hits: HitEvent[]
+}
 export interface HitEvent {
   sequence: number
   timestamp: string

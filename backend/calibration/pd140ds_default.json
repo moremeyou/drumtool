@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "name": "PD-140DS / TD-50X experimental calibration",
+  "description": "Forty supplied labelled head strikes from one setup, across different angular locations. Not a universal Roland calibration. INNER and MIDDLE overlap is intentional.",
+  "k": 5,
+  "normalization": "Divide raw MIDI features by 127, then apply feature weights. Ring distance uses CC16 only; velocity remains available as raw hit data.",
+  "feature_weights": {"position_cc16": 1, "velocity": 0},
+  "confidence": "Winning vote fraction divided by (1 + mean normalized neighbour distance). Heuristic, not physical-location probability.",
+  "samples": [
+    {
+      "ring": "CENTER",
+      "position_cc16": 0,
+      "velocity": 72
+    },
+    {
+      "ring": "CENTER",
+      "position_cc16": 0,
+      "velocity": 64
+    },
+    {
+      "ring": "CENTER",
+      "position_cc16": 0,
+      "velocity": 64
+    },
+    {
+      "ring": "CENTER",
+      "position_cc16": 0,
+      "velocity": 63
+    },
+    {
+      "ring": "CENTER",
+      "position_cc16": 0,
+      "velocity": 62
+    },
+    {
+      "ring": "CENTER",
+      "position_cc16": 0,
+      "velocity": 61
+    },
+    {
+      "ring": "CENTER",
+      "position_cc16": 0,
+      "velocity": 61
+    },
+    {
+      "ring": "CENTER",
+      "position_cc16": 0,
+      "velocity": 57
+    },
+    {
+      "ring": "CENTER",
+      "position_cc16": 0,
+      "velocity": 58
+    },
+    {
+      "ring": "CENTER",
+      "position_cc16": 0,
+      "velocity": 62
+    },
+    {
+      "ring": "INNER",
+      "position_cc16": 51,
+      "velocity": 52
+    },
+    {
+      "ring": "INNER",
+      "position_cc16": 57,
+      "velocity": 49
+    },
+    {
+      "ring": "INNER",
+      "position_cc16": 60,
+      "velocity": 52
+    },
+    {
+      "ring": "INNER",
+      "position_cc16": 80,
+      "velocity": 52
+    },
+    {
+      "ring": "INNER",
+      "position_cc16": 84,
+      "velocity": 51
+    },
+    {
+      "ring": "INNER",
+      "position_cc16": 89,
+      "velocity": 50
+    },
+    {
+      "ring": "INNER",
+      "position_cc16": 84,
+      "velocity": 48
+    },
+    {
+      "ring": "INNER",
+      "position_cc16": 0,
+      "velocity": 48
+    },
+    {
+      "ring": "INNER",
+      "position_cc16": 1,
+      "velocity": 46
+    },
+    {
+      "ring": "INNER",
+      "position_cc16": 7,
+      "velocity": 52
+    },
+    {
+      "ring": "MIDDLE",
+      "position_cc16": 95,
+      "velocity": 52
+    },
+    {
+      "ring": "MIDDLE",
+      "position_cc16": 85,
+      "velocity": 56
+    },
+    {
+      "ring": "MIDDLE",
+      "position_cc16": 85,
+      "velocity": 55
+    },
+    {
+      "ring": "MIDDLE",
+      "position_cc16": 85,
+      "velocity": 52
+    },
+    {
+      "ring": "MIDDLE",
+      "position_cc16": 10,
+      "velocity": 52
+    },
+    {
+      "ring": "MIDDLE",
+      "position_cc16": 53,
+      "velocity": 49
+    },
+    {
+      "ring": "MIDDLE",
+      "position_cc16": 62,
+      "velocity": 52
+    },
+    {
+      "ring": "MIDDLE",
+      "position_cc16": 75,
+      "velocity": 47
+    },
+    {
+      "ring": "MIDDLE",
+      "position_cc16": 93,
+      "velocity": 52
+    },
+    {
+      "ring": "MIDDLE",
+      "position_cc16": 84,
+      "velocity": 61
+    },
+    {
+      "ring": "OUTER",
+      "position_cc16": 125,
+      "velocity": 41
+    },
+    {
+      "ring": "OUTER",
+      "position_cc16": 127,
+      "velocity": 28
+    },
+    {
+      "ring": "OUTER",
+      "position_cc16": 116,
+      "velocity": 48
+    },
+    {
+      "ring": "OUTER",
+      "position_cc16": 116,
+      "velocity": 40
+    },
+    {
+      "ring": "OUTER",
+      "position_cc16": 127,
+      "velocity": 44
+    },
+    {
+      "ring": "OUTER",
+      "position_cc16": 127,
+      "velocity": 49
+    },
+    {
+      "ring": "OUTER",
+      "position_cc16": 93,
+      "velocity": 51
+    },
+    {
+      "ring": "OUTER",
+      "position_cc16": 127,
+      "velocity": 44
+    },
+    {
+      "ring": "OUTER",
+      "position_cc16": 112,
+      "velocity": 57
+    },
+    {
+      "ring": "OUTER",
+      "position_cc16": 85,
+      "velocity": 58
+    }
+  ]
+}
